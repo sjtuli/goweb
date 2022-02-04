@@ -1,8 +1,6 @@
 package models
 
-import (
-	"goblog/pkg/types"
-)
+import "goblog/pkg/types"
 
 // BaseModel 模型基类
 type BaseModel struct {
