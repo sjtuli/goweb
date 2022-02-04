@@ -2,7 +2,7 @@ package article
 
 import (
 	"github.com/gorilla/mux"
-	"goblog/models"
+	"goblog/app/models"
 	"goblog/pkg/route"
 	"strconv"
 )
