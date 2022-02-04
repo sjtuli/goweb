@@ -5,7 +5,6 @@ import (
 	article "goblog/app/models/artilce"
 	"goblog/pkg/logger"
 	"goblog/pkg/route"
-	"goblog/pkg/types"
 	"gorm.io/gorm"
 	"html/template"
 	"net/http"
@@ -54,10 +53,8 @@ func (*ArticlesController) Show(w http.ResponseWriter, r *http.Request) {
 		// 4.3 解析模板文件
 		tmpl, err := template.New("show.gohtml").
 			Funcs(template.FuncMap{
-				"RouteName2URL":  route.Name2URL,
-				"Uint64ToString": types.Uint64ToString,
+				"RouteName2URL": route.Name2URL,
 			}).ParseFiles(newFiles...)
-		logger.LogError(err)
 
 		// 4.4 渲染模板，将所有文章的数据传输进去
 		err = tmpl.ExecuteTemplate(w, "app", article)

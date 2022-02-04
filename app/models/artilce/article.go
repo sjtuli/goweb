@@ -2,6 +2,7 @@ package article
 
 import (
 	"github.com/gorilla/mux"
+	"goblog/app/models"
 	"goblog/pkg/route"
 	"strconv"
 )
@@ -10,6 +11,8 @@ var router = mux.NewRouter()
 
 // Article 文章模型
 type Article struct {
+	models.BaseModel
+
 	ID    uint64
 	Title string
 	Body  string
