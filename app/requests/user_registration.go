@@ -13,7 +13,7 @@ func ValidateRegistrationForm(data user.User) map[string][]string {
 	rules := govalidator.MapData{
 		"name":             []string{"required", "alpha_num", "between:3,20", "not_exists:users,name"},
 		"email":            []string{"required", "min:4", "max:30", "email", "not_exists:users,email"},
-		"password":         []string{"required", "min:6"},
+		"password":         []string{"required", "min:3"},
 		"password_confirm": []string{"required"},
 	}
 
