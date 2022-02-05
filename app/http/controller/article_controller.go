@@ -47,6 +47,7 @@ func (*ArticlesController) Show(w http.ResponseWriter, r *http.Request) {
 // Index 文章列表页
 func (*ArticlesController) Index(w http.ResponseWriter, r *http.Request) {
 
+	//fmt.Fprint(w, config.Get("app.name"))
 	// 1. 获取结果集
 	articles, err := article.GetAll()
 
